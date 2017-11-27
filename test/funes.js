@@ -1,10 +1,16 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Funes = require('../index');
+var Funes = require('../index');
 
 describe('funes.js', () => {
-    
+
     it('get null should return null when empty', done => {
+        var cache = new Funes();
+        cache.put({id: 1, name: 'a'});
+
+        cache.get(1).then(obj => console.log(obj));
+
+
         new Funes().get(null).then(obj => {
             expect(obj).to.be.null;
             done();

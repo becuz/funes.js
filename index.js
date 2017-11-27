@@ -1,17 +1,18 @@
 /**
  * Simple memory cache implementation.
- * 
+ *
  */
 class Funes {
 
   constructor(conf) {
       if (!conf) conf = {};
 
-      this.size    = conf.size || 10000;
-      this.validity = conf.validity == 0 ? conf.validity : conf.validity || 5 * 60 * 1000;
-      this.responseField = conf.responseField || 'body';
-      this.idField = conf.idField || 'id';
-      this.retrieve = conf.retrieve;
+      this.size    = conf.size || 10000;    //maximum size of the cache
+      this.validity = conf.validity == 0 ? conf.validity : conf.validity || 5 * 60 * 1000; //validity in ms of an element in the cache
+      this.retrieve = conf.retrieve;    //retrieve function to get expired objects or objects not in cache. Must returns a Promise.
+      this.responseField = conf.responseField || 'body'; //field in the response of the retrieve function, containing *array* of new objects
+      this.idField = conf.idField || 'id';  //field of the object containint the "id"
+
 
       this.cache = {
           queue: [],
