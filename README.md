@@ -6,7 +6,7 @@ It can transparently implement a simple "get or retrieve" policy.
 ## Simple usage
 
 ```
-var Funes = require('../index');
+var Funes = require('funes.js');
 
 var cache = new Funes();
 cache.put({id: 1, name: 'a'});
@@ -16,7 +16,7 @@ cache.get(1).then(obj => console.log(obj));
 ## "get or retrieve" usage
 
 ```
-var Funes = require('../index');
+var Funes = require('funes.js');
 
 var cache = new Funes({
     retrieve: function(ids){
