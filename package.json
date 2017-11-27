@@ -1,0 +1,24 @@
+{
+  "name": "funes.js",
+  "version": "0.0.1",
+  "description": "Small in-memory cache",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/becuz/funes.js"
+  },
+  "keywords": [
+    "node",
+    "cache"
+  ],
+  "license": "GPL-3.0",
+  "author": "sofasession",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  }
+}
